@@ -1,0 +1,137 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out; /* Body fade-in on page load */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Section Styling */
+.list-property {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.8s ease forwards; /* Form slides in */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.list-property h1 {
+    color: #0071e3;
+    margin-bottom: 20px;
+}
+
+.list-property p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInForm 0.8s ease-in-out forwards 0.3s; /* Form fades in */
+}
+
+/* Delayed fade-in for the form */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+label {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease; /* Hover effect for input fields */
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+/* Input field hover and focus effects */
+input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 5px rgba(0, 113, 227, 0.5); /* Light blue shadow on focus */
+    border-color: #0071e3;
+    outline: none;
+}
+
+button.submit-btn {
+    background-color: #0071e3;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Button hover animation */
+}
+
+button.submit-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Message Styling */
+#form-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green;
+    opacity: 0;
+    animation: fadeInMessage 0.5s ease-in-out forwards; /* Message fade-in */
+}
+
+/* Fade-in for the form message */
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

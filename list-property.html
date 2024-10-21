@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property - Sajha Ghar</title>
+    <link rel="stylesheet" href="list-property.css">
+</head>
+<body>
+
+    <!-- List Your Property Form -->
+    <section class="list-property">
+        <h1>List Your Property</h1>
+        <p>Fill out the form below to list your room or apartment for rent on Sajha Ghar.</p>
+        
+        <form id="property-form">
+            <label for="property-title">Property Title:</label>
+            <input type="text" id="property-title" name="propertyTitle" placeholder="e.g., Spacious Room in Kathmandu" required>
+
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="propertyType" required>
+                <option value="">--Select Type--</option>
+                <option value="Single Room">Single Room</option>
+                <option value="Shared Room">Shared Room</option>
+                <option value="Apartment">Apartment</option>
+            </select>
+
+            <label for="property-location">Location:</label>
+            <input type="text" id="property-location" name="propertyLocation" placeholder="e.g., Kathmandu, Nepal" required>
+
+            <label for="property-price">Price per Month (in NPR):</label>
+            <input type="number" id="property-price" name="propertyPrice" placeholder="e.g., 15000" required>
+
+            <label for="property-description">Description:</label>
+            <textarea id="property-description" name="propertyDescription" rows="4" placeholder="Describe your property..." required></textarea>
+
+            <label for="property-image">Upload Image:</label>
+            <input type="file" id="property-image" name="propertyImage" accept="image/*" required>
+
+            <button type="submit" class="submit-btn">Submit Property For FREE</button>
+        </form>
+
+        <div id="form-message"></div>
+    </section>
+
+    <script src="list-property.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Services - Sajha Ghar</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Container for terms */
+        .terms-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling headings */
+        h1, h2 {
+            color: #0071e3;
+        }
+
+        /* Terms list */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        /* Links and text decoration */
+        a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button to accept terms */
+        .accept-btn {
+            background-color: #0071e3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .accept-btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0071e3;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #005bb5;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="terms-container">
+        <h1>Terms and Services</h1>
+        <p>Welcome to Sajha Ghar. By using our services, you agree to the following terms and conditions:</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing our platform, you agree to comply with these terms and all applicable laws and regulations.</p>
+
+        <h2>2. Use of Services</h2>
+        <ul>
+            <li>Our platform is available for personal use to search for and list rental properties.</li>
+            <li>You are responsible for the accuracy of the information you provide.</li>
+        </ul>
+
+        <h2>3. Payment Terms</h2>
+        <p>Any payments made on the platform are subject to our <a href="#">payment policies</a>. Please ensure that you have read them carefully before proceeding.</p>
+
+        <h2>4. Privacy Policy</h2>
+        <p>Your privacy is important to us. Please review our <a href="#">Privacy Policy</a> to understand how we collect, use, and safeguard your data.</p>
+
+        <h2>5. Termination</h2>
+        <p>We reserve the right to suspend or terminate your access if you violate any terms or engage in misuse of the platform.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>We are not liable for any damages arising from the use or inability to use our platform.</p>
+
+        <button class="accept-btn" id="acceptTerms">Accept Terms and Continue</button>
+    </div>
+
+    <button class="scroll-to-top" id="scrollTopBtn">⬆️</button>
+
+    <script>
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Accept Terms Button
+        const acceptBtn = document.getElementById('acceptTerms');
+        acceptBtn.addEventListener('click', () => {
+            alert('Thank you for accepting the terms. You may now proceed.');
+            window.location.href = 'index.html'; // Redirect to the homepage
+        });
+
+    </script>
+</body>
+</html>
+

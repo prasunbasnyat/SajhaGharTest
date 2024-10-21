@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajha Ghar - Rooms for Rent in Nepal</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+    <style>
+        /* Add smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Body fade-in animation */
+        body {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section - Slide in */
+        .hero {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .hero.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Featured Listings - Fade in */
+        .featured-listings {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .featured-listings.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* How It Works - Slide in */
+        .how-it-works {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .how-it-works.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* List Property CTA - Fade in */
+        .list-property-cta {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .list-property-cta.visible {
+            opacity: 1;
+        }
+
+        /* Testimonials - Slide up */
+        .testimonials {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .testimonials.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ - Fade in */
+        .faq {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .faq.visible {
+            opacity: 1;
+        }
+
+        /* Contact Us - Slide in */
+        .contact-us {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .contact-us.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Sajha Ghar Logo" loading="lazy"></a>
+                <div class="site-title">
+                    <h1>Sajha Ghar</h1>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms-for-rent">Rooms for Rent</a></li>
+                <li><a href="#list-property-cta">List Your Property</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Find the Perfect Room for Rent in Nepal</h1>
+            <p>Browse from a wide range of rooms and apartments across the country</p>
+            <form id="search-form">
+                <input type="text" id="location" placeholder="Location">
+                <input type="text" id="price-range" placeholder="Price Range">
+                <input type="text" id="room-size" placeholder="Room Size">
+                <button type="submit" class="cta-btn">Find a Room</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="featured-listings" id="rooms-for-rent">
+        <h2>Featured Listings</h2>
+        <div class="listing-grid">
+            <div class="listing-item">
+                <img src="room1.jpg" alt="Room Image" loading="lazy">
+                <h3>Spacious Room in Kathmandu</h3>
+                <p>Rs.2,400 per month</p>
+                <a href="featured_listing1.html">
+                    <button>View Details</button>
+                </a>
+            </div>
+            <div class="listing-item">
+                <img src="room2.jpg" alt="Room Image" loading="lazy">
+                <h3>Cozy Apartment in Bhaktapur</h3>
+                <p>Rs.6,000 per month</p>
+                <a href="featured_listing1.html">
+                    <button>View Details</button>
+                </a>
+            </div>
+            <div class="listing-item">
+                <img src="room3.jpg" alt="Room Image" loading="lazy">
+                <h3>Modern Flat in Lalitpur</h3>
+                <p>Rs.9,500 per month</p>
+                <a href="featured_listing1.html">
+                    <button>View Details</button>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="view-all-btn">View All Listings</a>
+    </section>
+
+    <!-- List Your Property CTA -->
+    <section class="list-property-cta" id="list-property-cta">
+        <div class="cta-content">
+            <h2>Have a Room for Rent?</h2>
+            <p>List your property on Sajha Ghar and reach thousands of potential tenants. It’s easy, fast, and secure!</p>
+            <a href="list-property.html" class="cta-btn">List Your Property</a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="about-us">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="search-icon.png" alt="Search Icon" loading="lazy">
+                <h4>Step 1: Search for a Room</h4>
+                <p>Enter your preferences to find the perfect room for rent.</p>
+            </div>
+            <div class="step">
+                <img src="contact-icon.png" alt="Contact Icon" loading="lazy">
+                <h4>Step 2: Contact the Owner</h4>
+                <p>Contact the property owner to ask questions or arrange a visit.</p>
+            </div>
+            <div class="step">
+                <img src="book-icon.png" alt="Book Icon" loading="lazy">
+                <h4>Step 3: Book Your Stay</h4>
+                <p>Once you're happy, book your stay through our secure system.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <img src="user1.jpg" alt="Anupama's photo" class="user-photo"> <!-- User's photo -->
+                <p>"I found a great apartment in Kathmandu through Sajha Ghar. The process was so easy and efficient!"</p>
+                <h4>- Nimesh Ghimire, Renter</h4>
+            </div>
+            <div class="testimonial">
+                <img src="user2.jpg" alt="Prakash's photo" class="user-photo"> <!-- User's photo -->
+                <p>"Listing my property on Sajha Ghar brought me reliable tenants quickly. Highly recommend it!"</p>
+                <h4>- Ujjwal Jung Karki, Property Owner</h4>
+            </div>
+            <div class="testimonial">
+                <img src="user3.jpg" alt="Milan's photo" class="user-photo"> <!-- User's photo -->
+                <p>"The search feature made it easy to find a room that fit my budget. Great platform!"</p>
+                <h4>- Doshim Basnet, Renter</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>1. How do I book a room?</h4>
+            <p>You can search for rooms, contact the owner, and book directly through our platform.</p>
+        </div>
+        <div class="faq-item">
+            <h4>2. What are the payment methods available?</h4>
+            <p>We support various payment methods including Esewa, bank transfers, digital wallets, and credit cards.</p>
+        </div>
+        <div class="faq-item">
+            <h4>3. Is there a security deposit?</h4>
+            <p>Most listings require a security deposit. The amount depends on the property.</p>
+        </div>
+        <div class="faq-item">
+            <h4>4. Can I list my property for free?</h4>
+            <p>Listing your property is free. We charge a small commission when the booking is confirmed.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Contact Section -->
+    <section class="contact-us" id="contact-us">
+        <h2>Contact Us</h2>
+        <p>For any inquiries, feel free to reach out to us at:</p>
+        <ul>
+            <li>Email: sajhaghar1@gmail.com</li>
+            <li>Phone: +977 98 1040 4174</li>
+            <li>Address: Sajha Ghar Pvt. Ltd., Sunsari, Nepal</li>
+        </ul>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="termsandservices.html">Terms of Service</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=61567073922569" target="_blank" rel="noopener noreferrer">
+                    <img src="facebook-icon.png" alt="Facebook" style="width: 35px;">
+                </a>
+                <a href="https://www.tiktok.com/@sajhaghar.com?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+                    <img src="twitter-icon.png" alt="Twitter" style="width: 35px;">
+                </a>
+                <a href="https://www.instagram.com/sajhaghar/" target="_blank" rel="noopener noreferrer">
+                    <img src="instagram-icon.png" alt="Instagram" style="width: 35px;">
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2024 Sajha Ghar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for triggering animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);  // Unobserve once animation is triggered
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when 30% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sajha Ghar</title>
+    <style>
+
+        /* Logo & Home Button Styling */
+        .header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header img {
+            width: 50px;
+            height: auto;
+        }
+
+        .home-button {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .home-button:hover {
+            color: #005bb5;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in-out; /* Body fade-in on page load */
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 2s ease, transform 2s ease;
+        }
+
+        .signup-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .signup-container label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .signup-container input[type="text"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Input hover and focus transition */
+        }
+
+        .signup-container input[type="text"]:focus,
+        .signup-container input[type="email"]:focus,
+        .signup-container input[type="password"]:focus {
+            border-color: #0071e3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 113, 227, 0.5); /* Light blue shadow on focus */
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0071e3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Button hover animation */
+        }
+
+        .signup-container button:hover {
+            background-color: #005bb5;
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .signup-container .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .signup-container .login {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-container .login a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        .signup-container .login a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fade-in for form messages */
+        .signup-container .error {
+            opacity: 0;
+            animation: fadeInMessage 0.5s ease-in-out forwards; /* Message fade-in */
+        }
+
+        @keyframes fadeInMessage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <!-- Logo and Home Button -->
+    <div class="header">
+        <img src="logo.png" alt="Sajha Ghar Logo">
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+
+
+    <div class="signup-container" id="signup-container">
+        <h2>Create a Sajha Ghar Account</h2>
+        <div class="error" id="error"></div>
+        <form id="signupForm" onsubmit="return validateSignupForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupContainer = document.getElementById('signup-container');
+            
+            // Add the visible class to trigger the fade-in effect
+            signupContainer.classList.add('visible');
+        });
+
+        // Form validation logic
+        function validateSignupForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var error = document.getElementById("error");
+
+            if (username === "" || email === "" || password === "" || confirmPassword === "") {
+                error.textContent = "All fields are required.";
+                error.style.opacity = '1'; // Trigger error message fade-in
+                return false;
+            } else if (password !== confirmPassword) {
+                error.textContent = "Passwords do not match.";
+                error.style.opacity = '1'; // Trigger error message fade-in
+                return false;
+            } else {
+                error.textContent = "";
+                alert("Account created successfully");
+                return true;
+            }
+        }
+    </script>
+
+</body>
+</html>
